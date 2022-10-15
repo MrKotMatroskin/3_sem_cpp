@@ -4,7 +4,7 @@
 using namespace std;
 
 struct Point {
- unsigned long long const x, y;
+ unsigned long long x, y;
 
  Point (unsigned long long x , unsigned long long y):
  x(x) , y(y) {}
@@ -33,7 +33,8 @@ struct Point {
 
 
 
-struct Rectangle {
+class Rectangle {
+    public:
     Point p;
 
     Rectangle(): p(Point (0, 0)){}
@@ -54,11 +55,11 @@ struct Rectangle {
         return Rectangle(p1);
     }
 
-    const Rectangle& operator=(const Rectangle& other) const {
+    /*const Rectangle& operator=(const Rectangle& other) const {
         *(const_cast<unsigned long long*>(&(p.x))) = other.p.x;
         *(const_cast<unsigned long long*>(&(p.y))) = other.p.y;
         return *this;
-    };
+    };*/
 
     void print() const {
         p.print();
@@ -109,5 +110,6 @@ int main()
         R = R + r[i];
     }
     R.print();
+    delete[] number, simvol;
     return 0;
 }
