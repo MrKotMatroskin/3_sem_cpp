@@ -55,6 +55,12 @@ class Rectangle {
         return Rectangle(p1);
     }
 
+    Rectangle operator+=(Rectangle const &rha) const {
+        unsigned long long XmAx += rha.p.maxx(p).x;
+        unsigned long long YmAx += rha.p.maxy(p).y;
+        Point p1(XmAx, YmAx);
+        return Rectangle(p1);
+    }
     /*const Rectangle& operator=(const Rectangle& other) const {
         *(const_cast<unsigned long long*>(&(p.x))) = other.p.x;
         *(const_cast<unsigned long long*>(&(p.y))) = other.p.y;
