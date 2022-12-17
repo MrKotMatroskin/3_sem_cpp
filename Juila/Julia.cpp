@@ -197,7 +197,7 @@ public:
         R = f.CountUnitaryLimiter(accuracy);
         pallete.resize(maxind);
         for (int i = 0; i < maxind; i++){
-            pallete[i] = HSVtoRGB(360 * (static_cast<double>((i)%maxind)/maxind), 100, 100);
+            pallete[i] = HSVtoRGB(360 * ((double)((i)%maxind)/maxind), 100, 100);
         }
     }
     void JuliaCheck(ComplexNum x, int row, int col){
@@ -220,7 +220,7 @@ public:
             }
         }
     }
-    virtual void ReDraw() override{
+    virtual void ReDraw(){
             size_t row;
             #pragma omp parallel for
             for (row = 0; row < height; ++row) {
